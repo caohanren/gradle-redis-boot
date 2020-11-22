@@ -1,0 +1,40 @@
+# Tomcat
+server:
+  port: 8888
+  servlet:
+    context-path: /
+
+spring:
+  # 环境 dev|test|prod
+  profiles:
+    active: dev
+
+  redis:
+    open: false  # 是否开启redis缓存  true开启   false关闭
+    database: 0
+    host: 47.115.6.182
+    port: 6379
+    password:    # 密码（默认为空）
+    timeout: 6000ms  # 连接超时时长（毫秒）
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.renren.study.entity.*.Entity
+  global-config:
+    #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID", ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+    id-type: AUTO
+    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+    #field-strategy: 2
+    #驼峰下划线转换
+    db-column-underline: true
+    logic-delete-value: 1
+    logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+logging:
+  level:
+    com.renren.study.mapper: debug
+

@@ -1,0 +1,41 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.0'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.renren'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+
+repositories {
+    //mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+    compile 'org.springframework.boot:spring-boot-starter-data-redis'
+    testCompile('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.2'
+    compile group: 'redis.clients', name: 'jedis', version: '3.3.0'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile group: 'com.google.guava', name: 'guava', version: '23.0'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.75'
+    compile group: 'com.alibaba', name: 'druid-spring-boot-starter', version: '1.1.22'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
