@@ -3,7 +3,7 @@ spring:
         type: com.alibaba.druid.pool.DruidDataSource
         druid:
             driver-class-name: com.mysql.jdbc.Driver
-            url: jdbc:mysql://47.115.6.182:3306/packet?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
+            url: jdbc:mysql://127.0.0.1:3306/packet?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
             username: root
             password: 199610w
             initial-size: 10
